@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firhan Abigael - Profile</title>
+    <!-- custom css -->
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/css/font-awesome/css/font-awesome.min.css">
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nobile&family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="#">About Me</a>
+                <a class="nav-item nav-link" href="#">My Portofolio</a>
+                <a class="nav-item nav-link" href="#">My Education</a>
+                <a class="nav-item nav-link" href="#">Contact Me</a>
+            </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Pages -->
+    <div id="pages">
+        <div id="home">
+            <section class="container-fluid fixed-bottom">
+                <div class="row">
+                    <div class="col-12 text-medsos">
+                        <h1 class="jobdesc border-bottom mb-3">Junior Fullstack Web Developer</h1>
+                        <h3>Hai, I'm <span class="fullname">Firhan Abigael.</span></h3>
+                        <section class="media-social">
+                            <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-github-square" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                        </section>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div id="button-circle-bottom">
+        <section class="container-fluid fixed-bottom">
+            <div class="row">
+                <div class="col-12 m_menu" id="m_menu">
+                    <div class="m_menu_inner">
+                        <div class="row" id="m_menu_navigation">
+                            <div class="col-4" style="text-align: center;">
+                                <label id="m_page_btn" page="home">
+                                    <i class="fa fa-home" aria-hidden="true"></i><br>Home</label>
+                            </div>
+                            <div class="col-4" style="text-align: center;">
+                                <label id="m_page_btn" page="about_me">
+                                    <i class="fa fa-user" aria-hidden="true"></i><br>About Me</label>
+                            </div>
+                            <div class="col-4" style="text-align: center;">
+                                <label id="m_page_btn" page="my_education">
+                                    <i class="fa fa-graduation-cap" aria-hidden="true"></i><br>My Education</label>
+                            </div>
+                            <div class="col-4" style="text-align: center;">
+                                <label id="m_page_btn" page="my_job_experience">
+                                    <i class="fa fa-tasks" aria-hidden="true"></i><br>My Job Experience</label>
+                            </div>
+                            <div class="col-4" style="text-align: center;">
+                                <label id="m_page_btn" page="my_portofolio">
+                                    <i class="fa fa-briefcase" aria-hidden="true"></i><br>My Portofolio</label>
+                            </div>
+                            <div class="col-4" style="text-align: center;">
+                                <label id="m_page_btn" page="contact_me">
+                                    <i class="fa fa-phone" aria-hidden="true"></i><br>Contact Me</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="btn_menu">
+                        <i class="fa fa-th" aria-hidden="true"></i>
+                    </div>		
+                </div>
+            </div>
+        </section>
+    </div>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        $(".btn_menu").click(function(){
+            $("#m_menu").toggle();
+        });
+    </script>
+</body>
+</html>

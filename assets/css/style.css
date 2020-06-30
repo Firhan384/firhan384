@@ -1,0 +1,143 @@
+/* Reset css */
+* {
+    margin: 0; 
+    padding: 0;
+}
+
+body {
+	background: url('../../33c54aa5-a1d7-46b7-b552-80aa4e5d37ca-removebg-preview.png') no-repeat, linear-gradient(90deg,white,lightgrey);
+	background-attachment: fixed;
+	background-position: left;
+	font-family: 'nobile';
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+
+nav.navbar > .container-fluid > a.navbar-brand{
+	color: black;
+	font-size: 36px;
+}
+nav.navbar > .container-fluid > a.navbar-brand:hover{
+	color: grey;
+}
+
+div.collapse > div.navbar-nav > a.nav-item {
+	color: black;
+	padding: 0 30px;
+	font-size: 24px;
+}
+
+div.collapse > div.navbar-nav > a.nav-item:hover {
+	color: grey;
+	border-bottom: 0.5px solid lightgray;
+	transition: 0.5s;
+}
+
+.fullname{
+	font-weight: bold;
+}
+
+div.content{
+	margin: 100px 0;
+}
+
+.media-social{
+	font-size: 36px;
+}
+
+.media-social > a > i {
+	color: black;
+}
+
+.media-social > a > i:hover {
+	color: grey;
+}
+
+.m_menu{
+	bottom: 70px;
+	display: none;
+	position: absolute;
+}
+.m_menu_inner{
+	padding: 10px 5px;
+	background: white;
+	box-shadow: 0px 0px 10px 5px #bcbcbc;
+	border-radius: 10px;
+}
+.m_menu_inner label{
+	margin: 15px 0px;
+	font-size: 10px;
+}
+.m_menu_inner label i{
+	font-size: 25px;
+}
+.btn_menu{
+	color: white;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    bottom: 10px;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    text-align: center;
+    background: black;
+    box-shadow: 0px 0px 10px 1px #cacaca;
+    border-radius: 100%;
+}
+.btn_menu i{
+	position: absolute;
+	top: 17px;
+	right: 18px;
+}
+.btn_menu:active {
+  background: grey;
+  box-shadow: 0px 0px 10px 5px #cacaca;
+}
+
+
+/* responsive dekstop / laptop */
+@media only screen and (min-width: 992px) {
+	.text-medsos{
+		margin-left: 450px;
+		margin-bottom: 50px;
+	}
+}
+
+/* responsive mobile */
+@media only screen and (max-width: 600px) {
+	body{
+		background: url('../../33c54aa5-a1d7-46b7-b552-80aa4e5d37ca-removebg-preview.png') no-repeat, linear-gradient(-90deg,white,lightgrey);
+		background-attachment: fixed;
+		background-position: left;
+		background-position-x: -230px;
+		background-position-y: 120px;
+	}
+	nav.navbar{
+		display: none;
+	}
+	.text-medsos > h1.jobdesc{
+		font-size: 23px;
+		font-weight: bold;
+		text-shadow: 1px 0.5px black;
+	}
+	div.button-circle > i {
+		top: 13px;
+		right: 11.5px;
+		position: absolute;
+		font-size: 28px;
+	}
+	.btn_menu{
+		display: block;
+	}
+	div.title-mobile{
+		font-family: 'nobile';
+		text-align: center;
+		margin-top: 10px;
+		font-weight: bold;
+	}
+}
+
