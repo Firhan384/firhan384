@@ -16,6 +16,19 @@
 </head>
 <body>
 
+    <div class="preloader">
+        <div class="loading">
+          <img src="assets/img/loader.gif">
+        </div>
+    </div>
+
+    <!-- header mobile -->
+    <div class="container-fluid">
+        <div class="header">
+            <img src="assets/img/33c54aa5-a1d7-46b7-b552-80aa4e5d37ca-removebg-preview.png" class="img-fluid mx-auto d-block rounded-circle">
+        </div>  
+    </div>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
@@ -36,21 +49,6 @@
     
     <!-- Pages -->
     <div id="pages">
-        <div id="home">
-            <section class="container-fluid fixed-bottom">
-                <div class="row">
-                    <div class="col-12 text-medsos">
-                        <h1 class="jobdesc border-bottom mb-3">Junior Fullstack Web Developer</h1>
-                        <h3>Hai, I'm <span class="fullname">Firhan Abigael.</span></h3>
-                        <section class="media-social">
-                            <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-github-square" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-                        </section>
-                    </div>
-                </div>
-            </section>
-        </div>
     </div>
 
     <div id="button-circle-bottom">
@@ -60,11 +58,11 @@
                     <div class="m_menu_inner">
                         <div class="row" id="m_menu_navigation">
                             <div class="col-4" style="text-align: center;">
-                                <label id="m_page_btn" page="home">
+                                <label id="m_page_btn" page="page_home">
                                     <i class="fa fa-home" aria-hidden="true"></i><br>Home</label>
                             </div>
                             <div class="col-4" style="text-align: center;">
-                                <label id="m_page_btn" page="about_me">
+                                <label id="m_page_btn" page="page_about">
                                     <i class="fa fa-user" aria-hidden="true"></i><br>About Me</label>
                             </div>
                             <div class="col-4" style="text-align: center;">
@@ -94,16 +92,54 @@
             </div>
         </section>
     </div>
-    
+
+    <!-- aktif page -->
+    <input type="hidden" id="active_page" value="page_home">
 
     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script>
+    <!-- custom javascript -->
+    <script src="assets/js/education.js"></script>
+    <script src="assets/js/portfolio.js"></script>
+    <script src="assets/js/menu.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            $(".preloader").fadeOut();
+        });
+        
         $(".btn_menu").click(function(){
             $("#m_menu").toggle();
+        });
+
+        $(document).ready(function(){
+            var pages = "";
+            for(var i=0; i< menu.length; i++ ){
+                pages += '<div id="page_'+menu[i][1]+'"></div>';
+            }
+            $('#pages').html(pages);
+            $('#page_home').load('home.html');
+        });
+
+        $(document).ready(function(){
+            $('body').on('click','#m_page_btn',function(){
+                var page 		= $(this).attr('page');
+                console.log(page);
+                var active_page	= $('#active_page').val();
+                if (page != active_page) {
+                    $('#preloader').show();
+                    setTimeout(function () {
+                        $('#preloader').fadeOut();
+                    }, 1000);
+                    $('#'+active_page).hide();
+                    $('#active_page').val(page);
+                    $('#'+page).load('about.html');
+                }
+            });
         });
     </script>
 </body>
