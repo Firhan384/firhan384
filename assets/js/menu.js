@@ -5,6 +5,6 @@ var menu = [
     ],
     [
         'About Me',
-        'about'
+        'about_me'
     ]
 ];

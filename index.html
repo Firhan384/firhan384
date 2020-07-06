@@ -58,27 +58,27 @@
                     <div class="m_menu_inner">
                         <div class="row" id="m_menu_navigation">
                             <div class="col-4" style="text-align: center;">
-                                <label id="m_page_btn" page="page_home">
+                                <label id="m_page_btn" page="home">
                                     <i class="fa fa-home" aria-hidden="true"></i><br>Home</label>
                             </div>
                             <div class="col-4" style="text-align: center;">
-                                <label id="m_page_btn" page="page_about">
+                                <label id="m_page_btn" page="about_me">
                                     <i class="fa fa-user" aria-hidden="true"></i><br>About Me</label>
                             </div>
                             <div class="col-4" style="text-align: center;">
-                                <label id="m_page_btn" page="my_education">
+                                <label id="m_page_btn" page="pages_education">
                                     <i class="fa fa-graduation-cap" aria-hidden="true"></i><br>My Education</label>
                             </div>
                             <div class="col-4" style="text-align: center;">
-                                <label id="m_page_btn" page="my_job_experience">
+                                <label id="m_page_btn" page="pages_job_experience">
                                     <i class="fa fa-tasks" aria-hidden="true"></i><br>My Job Experience</label>
                             </div>
                             <div class="col-4" style="text-align: center;">
-                                <label id="m_page_btn" page="my_portofolio">
+                                <label id="m_page_btn" page="pages_portofolio">
                                     <i class="fa fa-briefcase" aria-hidden="true"></i><br>My Portofolio</label>
                             </div>
                             <div class="col-4" style="text-align: center;">
-                                <label id="m_page_btn" page="contact_me">
+                                <label id="m_page_btn" page="pages_contact_me">
                                     <i class="fa fa-phone" aria-hidden="true"></i><br>Contact Me</label>
                             </div>
                         </div>
@@ -94,7 +94,7 @@
     </div>
 
     <!-- aktif page -->
-    <input type="hidden" id="active_page" value="page_home">
+    <input type="hidden" id="active_page" value="home">
 
     <!-- Optional JavaScript -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -122,22 +122,29 @@
                 pages += '<div id="page_'+menu[i][1]+'"></div>';
             }
             $('#pages').html(pages);
-            $('#page_home').load('home.html');
+            $("#page_home").load('pages/home.html');
+            $("#page_about_me").load('pages/about.html');
+            
         });
-
+        // dekstio version
+        
+        // mobile version
         $(document).ready(function(){
             $('body').on('click','#m_page_btn',function(){
                 var page 		= $(this).attr('page');
-                console.log(page);
                 var active_page	= $('#active_page').val();
                 if (page != active_page) {
-                    $('#preloader').show();
-                    setTimeout(function () {
-                        $('#preloader').fadeOut();
-                    }, 1000);
-                    $('#'+active_page).hide();
-                    $('#active_page').val(page);
-                    $('#'+page).load('about.html');
+				$('.preloader').show();
+				setTimeout(function () {
+					$('.preloader').fadeOut();
+				}, 1000);
+				$('#m_menu').fadeToggle(200);
+				$('#'+page).show();
+				$('#'+active_page).hide();
+				$('#active_page').val(page);	
+                }
+                else{
+                    $('#m_menu').fadeToggle(200);
                 }
             });
         });
