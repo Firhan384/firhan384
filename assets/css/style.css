@@ -18,7 +18,7 @@ html {
 	z-index: 9999;
 	background-color: #fff;
 }
-  .preloader .loading {
+.preloader .loading {
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -26,18 +26,37 @@ html {
 	font: 14px arial;
 }
 
+.header_panel{
+	text-align: left;
+}
+.header_image{
+	width: 50px;
+    height: 50px;
+    background-size: cover;
+    border-radius: 100px;
+    display: inline-block;
+}
+.header_name{
+	display: inline-block;
+	text-align: left;
+}
+.header_name p{
+	margin: 0px;
+	position: relative;
+	font-size: 12px;
+	font-weight: bold;
+}
+.header_name span{
+	font-size: 12px;
+}
+
+
 nav.navbar > .container-fluid > a.navbar-brand{
 	color: black;
 	font-size: 36px;
 }
 nav.navbar > .container-fluid > a.navbar-brand:hover{
 	color: grey;
-}
-
-div.collapse > div.navbar-nav > a.nav-item {
-	color: black;
-	padding: 0 30px;
-	font-size: 24px;
 }
 
 div.collapse > div.navbar-nav > a.nav-item:hover {
@@ -125,6 +144,11 @@ div.content{
 	.header {
 		display: none;
 	}
+	div.collapse > div.navbar-nav > label.nav-item {
+		color: black;
+		padding: 0 30px;
+		font-size: 24px;
+	}
 }
 
 /* responsive mobile */
@@ -135,16 +159,11 @@ div.content{
 	background-attachment: fixed;
 	font-family: 'nobile';
 	}
-	.header{
-		height:30%;
-		left:-3%;
-		position:absolute;
-		background-image: linear-gradient(#8459f9, #4c3196);
-		border-bottom-left-radius: 50% 20%;
-		border-bottom-right-radius: 50% 20%;
-	}
-	.header > img{
-		width: 45%;
+	.header_panel{
+		top: -15px;
+		background-image: linear-gradient(#ad93f7, #4c3196);
+		border-bottom-left-radius: 50% 30%;
+		border-bottom-right-radius: 50% 30%;
 	}
 	nav.navbar{
 		display: none;

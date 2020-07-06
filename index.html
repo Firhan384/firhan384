@@ -16,32 +16,33 @@
 </head>
 <body>
 
+    <!-- loading -->
     <div class="preloader">
         <div class="loading">
           <img src="assets/img/loader.gif">
         </div>
     </div>
 
-    <!-- header mobile -->
-    <div class="container-fluid">
-        <div class="header">
-            <img src="assets/img/33c54aa5-a1d7-46b7-b552-80aa4e5d37ca-removebg-preview.png" class="img-fluid mx-auto d-block rounded-circle">
-        </div>  
-    </div>
+    <section class="container-fluid sticky-top">
+        <div class="row" style="padding: 10px 0px;">
+            <div class="col-12 header_panel">
+                <div class="header_image" style="background-image: url('assets/img/33c54aa5-a1d7-46b7-b552-80aa4e5d37ca-removebg-preview.png')"></div>
+                &nbsp;
+                <div class="header_name">
+                    <p>
+                        Firhan Abigael
+                    </p>
+                    <span>Full Stack Web Developer</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Home</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link" href="#">About Me</a>
-                <a class="nav-item nav-link" href="#">My Portofolio</a>
-                <a class="nav-item nav-link" href="#">My Education</a>
-                <a class="nav-item nav-link" href="#">Contact Me</a>
             </div>
             </div>
         </div>
@@ -126,7 +127,14 @@
             $("#page_about_me").load('pages/about.html');
             
         });
-        // dekstio version
+        // dekstop version
+        $(document).ready(function(){
+            var nav = "";
+            for(var i=0; i< menu.length; i++){
+                nav+= '<label class="nav-item nav-link" id="nav_"'+menu[i][1]+'">'+menu[i][0]+'</label>';
+            }
+            $(".navbar-nav").html(nav);
+        });
         
         // mobile version
         $(document).ready(function(){
