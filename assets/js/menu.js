@@ -16,6 +16,10 @@ var menu = [
         'my_job'
     ],
     [
+        'My Education',
+        'my_education'
+    ],
+    [
         'Contact Me',
         'contact_me'
     ]

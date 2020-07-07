@@ -4,7 +4,6 @@
     padding: 0;
 }
 
-
 html {
 	scroll-behavior: smooth;
 }
@@ -42,7 +41,6 @@ html {
 }
 .header_name p{
 	margin: 0px;
-	position: relative;
 	font-size: 12px;
 	font-weight: bold;
 }
@@ -50,19 +48,11 @@ html {
 	font-size: 12px;
 }
 
-
-nav.navbar > .container-fluid > a.navbar-brand{
-	color: black;
-	font-size: 36px;
-}
-nav.navbar > .container-fluid > a.navbar-brand:hover{
-	color: grey;
-}
-
-div.collapse > div.navbar-nav > a.nav-item:hover {
+div.collapse > div.navbar-nav > label.nav-item:hover {
 	color: grey;
 	border-bottom: 0.5px solid lightgray;
 	transition: 0.5s;
+	cursor: pointer;
 }
 
 .fullname{
@@ -122,11 +112,19 @@ div.content{
 	top: 17px;
 	right: 18px;
 }
+
 .btn_menu:active {
   background: grey;
   box-shadow: 0px 0px 10px 5px #cacaca;
 }
 
+#pages {
+	padding: 50px 30px;
+}
+
+.bg-lightgrey{
+	background-color: lightgrey;
+}
 
 /* responsive dekstop / laptop */
 @media only screen and (min-width: 992px) {
@@ -146,8 +144,8 @@ div.content{
 	}
 	div.collapse > div.navbar-nav > label.nav-item {
 		color: black;
-		padding: 0 30px;
-		font-size: 24px;
+		padding: 0px 30px;
+		font-size: 17px;
 	}
 }
 
@@ -159,12 +157,7 @@ div.content{
 	background-attachment: fixed;
 	font-family: 'nobile';
 	}
-	.header_panel{
-		top: -15px;
-		background-image: linear-gradient(#ad93f7, #4c3196);
-		border-bottom-left-radius: 50% 30%;
-		border-bottom-right-radius: 50% 30%;
-	}
+
 	nav.navbar{
 		display: none;
 	}
@@ -187,6 +180,12 @@ div.content{
 		text-align: center;
 		margin-top: 10px;
 		font-weight: bold;
+	}
+	#pages {
+		font-size: 12px;
+	}
+	.bg-lightgrey > h2 {
+		font-size: 20px;
 	}
 }
 

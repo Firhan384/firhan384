@@ -1,0 +1,21 @@
+<script type="text/javascript">
+    $(document).ready(function(){
+        var my_education = "";
+        for(var i=0; i<education.length; i++){
+            my_education += "<h5>"+education[i][0]+"</h5>";
+            my_education += "<h6><i class='fa fa-calendar'></i> "+education[i][1]+"</h6>";
+            my_education += "<hr>";
+        }
+        console.log(my_education);
+        $(".my_education").html(my_education);
+    });
+</script>
+<section class="container-fluid" id="my_education" style="display: none;">
+	<div class="row">
+		<div class="col-sm-8 col-md-7 offset-sm-3 offset-md-4">
+			<div class="shadow-lg p-3 mb-5 bg-lightgrey rounded">
+                <div class="my_education"></div>
+            </div>
+        </div>
+	</div>
+</section>

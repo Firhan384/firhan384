@@ -24,7 +24,7 @@
     </div>
 
     <section class="container-fluid sticky-top">
-        <div class="row" style="padding: 10px 0px;">
+        <div class="row" `>
             <div class="col-12 header_panel">
                 <div class="header_image" style="background-image: url('assets/img/33c54aa5-a1d7-46b7-b552-80aa4e5d37ca-removebg-preview.png')"></div>
                 &nbsp;
@@ -67,12 +67,12 @@
                                     <i class="fa fa-user" aria-hidden="true"></i><br>About Me</label>
                             </div>
                             <div class="col-4" style="text-align: center;">
-                                <label id="m_page_btn" page="pages_education">
+                                <label id="m_page_btn" page="my_education">
                                     <i class="fa fa-graduation-cap" aria-hidden="true"></i><br>My Education</label>
                             </div>
                             <div class="col-4" style="text-align: center;">
-                                <label id="m_page_btn" page="pages_job_experience">
-                                    <i class="fa fa-tasks" aria-hidden="true"></i><br>My Job Experience</label>
+                                <label id="m_page_btn" page="my_job">
+                                    <i class="fa fa-suitcase" aria-hidden="true"></i><br>My Job Experience</label>
                             </div>
                             <div class="col-4" style="text-align: center;">
                                 <label id="m_page_btn" page="pages_portofolio">
@@ -105,6 +105,7 @@
     <!-- custom javascript -->
     <script src="assets/js/education.js"></script>
     <script src="assets/js/portfolio.js"></script>
+    <script src="assets/js/experience.js"></script>
     <script src="assets/js/menu.js"></script>
 
     <script type="text/javascript">
@@ -116,7 +117,7 @@
         $(".btn_menu").click(function(){
             $("#m_menu").toggle();
         });
-
+        // nav
         $(document).ready(function(){
             var pages = "";
             for(var i=0; i< menu.length; i++ ){
@@ -125,15 +126,34 @@
             $('#pages').html(pages);
             $("#page_home").load('pages/home.html');
             $("#page_about_me").load('pages/about.html');
+            $("#page_my_education").load('pages/education.html');
+            $("#page_my_job").load('pages/experience.html');
             
         });
         // dekstop version
         $(document).ready(function(){
             var nav = "";
             for(var i=0; i< menu.length; i++){
-                nav+= '<label class="nav-item nav-link" id="nav_"'+menu[i][1]+'">'+menu[i][0]+'</label>';
+                nav += "<label class='nav-item nav-link' id='page_btn' page='"+menu[i][1]+"'>";
+                nav += menu[i][0];
+                nav += "</label>";
             }
             $(".navbar-nav").html(nav);
+
+            $('body').on('click','#page_btn',function(){
+                var page 		= $(this).attr('page');
+                console.log(page);
+                var active_page	= $('#active_page').val();
+                if (page != active_page) {
+				$('.preloader').show();
+				setTimeout(function () {
+					$('.preloader').fadeOut();
+				}, 1000);
+				$('#'+page).show();
+				$('#'+active_page).hide();
+				$('#active_page').val(page);	
+                }
+            });
         });
         
         // mobile version

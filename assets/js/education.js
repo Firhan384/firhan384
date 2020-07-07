@@ -2,7 +2,7 @@ var education = [
 
     [
         'STMIK Eresha',
-        '2016 - Until Now'
+        '2016 - Current'
     ],
     [
         'SMK Bangun Nusantara',
