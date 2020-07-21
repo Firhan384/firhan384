@@ -2,6 +2,9 @@
     $(document).ready(function(){
         var my_job = "";
         for(var i=0; i<experience.length; i++){
+            my_job += '<div class="row">';
+            my_job += '<div class="col-sm-8 col-md-7 offset-sm-3 offset-md-4">';
+            my_job += '<div class="shadow-lg p-3 mb-5 bg-lightgrey rounded">';
             my_job += "<h5>"+experience[i][0]+" - "+experience[i][2]+"</h5>";
             my_job += "<h6><i class='fa fa-calendar'></i> "+experience[i][1]+"</h6>";
             my_job += '<p>';
@@ -9,18 +12,21 @@
                 my_job += '<li>'+experience[i][3][x]+'</li>';
             }
             my_job += '</p>';  
+            my_job += '</div>'; 
+            my_job += '</div>'; 
+            my_job += '</div>'; 
         }
         $(".experience").html(my_job);
     });
 </script>
 
 <section class="container-fluid" id="my_job" style="display: none;">
-	<div class="row">
-		<div class="col-sm-8 col-md-7 offset-sm-3 offset-md-4">
-            <div class="shadow-lg p-3 mb-5 bg-lightgrey rounded">
+    <div class="row">
+        <div class="col-sm-8 col-md-7 offset-sm-3 offset-md-4">
+            <div class="shadow-lg p-3 mb-1 bg-lightgrey rounded">
                 <h2><i class="fa fa-suitcase"></i> <b>My Job Experience</b></h2>
-                <div class="experience"></div>
             </div>
         </div>
-	</div>
+    </div>
+	<div class="experience"></div>
 </section>

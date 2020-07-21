@@ -1,0 +1,26 @@
+<script type="text/javascript">
+    $(document).ready(function(){
+        var my_contact = "";
+        for(var i=0; i<contact.length; i++){
+            my_contact += '<div class="row">';
+            my_contact += '<div class="col-sm-8 col-md-7 offset-sm-3 offset-md-4">';
+            my_contact += '<div class="shadow-lg p-3 mb-1">';
+            my_contact += "<h5>My Contact Person</h5>";
+            my_contact += '<div class="icon-medsos">'
+            my_contact += '<a href="mailto:'+contact[i][0]+'"><i class="fa fa-envelope fa-3x"></i></a>';
+            my_contact += '<a href="'+contact[i][1]+'"><i class="fa fa-facebook-square fa-3x"></i></a>';
+            my_contact += '<a href="'+contact[i][2]+'"><i class="fa fa-linkedin-square fa-3x"></i></a>';
+            my_contact += '<a href="'+contact[i][3]+'"><i class="fa fa-github-square fa-3x "></i></a>';
+            my_contact += '<a href="https://wa.me/'+contact[i][4]+'?text=saya tertarik dengan portofolio anda"><i class="fa fa-whatsapp fa-3x "></i></a>';
+            my_contact += "</div>";
+            my_contact += "</div>";
+            my_contact += "</div>";
+            my_contact += "</div>";
+        }
+        console.log(my_contact);
+        $(".my_contact").html(my_contact);
+    });
+</script>
+<section class="container-fluid" id="contact_me" style="display: none;">
+	<div class="my_contact"></div>
+</section>
