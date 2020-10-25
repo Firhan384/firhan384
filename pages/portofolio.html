@@ -1,47 +1,74 @@
 <script type="text/javascript">
-    $(document).ready(function(){
-        var img_portoflio = "";
-        for(var i = 0; i < portfolio.length; i++ ){
-            img_portoflio += '<div class="col-md-3">';
-            img_portoflio += '<a onclick="clickImg('+i+')"><img class="w-100 h-50 img-fluid" src="assets/img/'+portfolio[i][2]+'"></a>';
-            img_portoflio += '</div>';
-        }
-        $("#gallery").html(img_portoflio);
-    });
-    function clickImg(loop)
-    {
-        var adding_img = '<img class="w-100 h-50 img-fluid" src="assets/img/'+portfolio[loop][2]+'">';
-        adding_img += '<p>'+portfolio[loop][1]+'</p>';
-        $("#portfolioModal").modal('show');
-        $(".modal-title").text(portfolio[loop][0]);
-        $(".modal-body").html(adding_img);
+  $(document).ready(function () {
+    var img_portoflio = "";
+    for (var i = 0; i < portfolio.length; i++) {
+      img_portoflio += '<div class="col-md-3">';
+      img_portoflio +=
+        '<a onclick="clickImg(' +
+        i +
+        ')"><img class="w-100 h-50 img-fluid" src="assets/img/' +
+        portfolio[i][2] +
+        '"></a>';
+      img_portoflio += "</div>";
     }
+    $("#gallery").html(img_portoflio);
+  });
+  function clickImg(loop) {
+    var adding_img =
+      '<img class="w-100 h-50 img-fluid" src="assets/img/' +
+      portfolio[loop][2] +
+      '">';
+    let link_Portofolio = "";
+    let footer = "";
+    adding_img += "<p>" + portfolio[loop][1] + "</p>";
+    $("#portfolioModal").modal("show");
+    $(".modal-title").text(portfolio[loop][0]);
+    $(".modal-body").html(adding_img);
+    if (portfolio[loop][3] != "") {
+      link_Portofolio = portfolio[loop][3];
+      footer += `<button type="button" class="btn btn-secondary" data-dismiss="modal">
+        Close
+      </button>`;
+      footer += `<a href="${link_Portofolio}"><button class="btn btn-info">Link</button></a>`;
+    } else {
+      footer += `<button type="button" class="btn btn-secondary" data-dismiss="modal">
+        Close
+      </button>`;
+    }
+    $(".modal-footer").html(footer);
+  }
 </script>
-<section class="container-fluid" id="my_portfolio" style="display: none;">
-   
-    <div class="row">
-        <div class="offset-sm-3 offset-md-4">
-            <div class="row" id="gallery">
-            </div>
-        </div>
+<section class="container-fluid" id="my_portfolio" style="display: none">
+  <div class="row">
+    <div class="offset-sm-3 offset-md-4">
+      <div class="row" id="gallery"></div>
     </div>
+  </div>
 </section>
 
 <!-- Modal -->
-<div class="modal fade" id="portfolioModal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
+<div
+  class="modal fade"
+  id="portfolioModal"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
+      <div class="modal-body"></div>
+      <div class="modal-footer"></div>
     </div>
+  </div>
 </div>
