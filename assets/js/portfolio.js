@@ -35,4 +35,10 @@ var portfolio = [
     "latihan2.jpg",
     "https://github.com/Firhan384/latihan2",
   ],
+  [
+    "Design Web Apps - Inspirasi dari web e-commerce (Blibli)",
+    "saya mencoba membuat design UI tampilan untuk web responsive mobile, dan saya mendapatkan inspirasi dari website e-commerce yaitu blibli",
+    "latihan3.png",
+    "https://github.com/Firhan384/latihan3",
+  ],
 ];
