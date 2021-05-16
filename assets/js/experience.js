@@ -1,6 +1,12 @@
 var experience = [
 
     [
+        'PT Redbuzz Mediatama',
+        '2020 - Present',
+        'Fullstack Developer',
+    ],
+
+    [
         'PT Global Digital Niaga(Blibli.com)',
         '2015 - 2020',
         'Leader Fulfillment',

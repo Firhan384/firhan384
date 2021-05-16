@@ -1,7 +1,7 @@
 var education = [
 
     [
-        'STMIK Eresha',
+        'Universitas Pamulang',
         '2016 - Current'
     ],
     [
